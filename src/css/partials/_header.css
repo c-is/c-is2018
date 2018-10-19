@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 6.666rem;
+  padding: 0 $wrapperSpace;
+  z-index: 8;
+  transform: translateY(-100%);
+
+  @mixin breakpoint phone {
+    height: 5rem;
+    padding: 0 2rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $font-sub;
+    height: 100%;
+    line-height: 1.233;
+
+    @mixin breakpoint phone {
+      line-height: 0.8;
+    }
+
+    svg {
+      width: 3.333rem;
+      fill: $colour-main;
+      transition: all 1.2s ease-out-circ;
+
+      @mixin breakpoint phone {
+        width: 2.666rem;
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: rotate(91deg);
+        fill: $colour-sub;
+      }
+    }
+  }
+}
+

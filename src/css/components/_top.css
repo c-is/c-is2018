@@ -1,0 +1,104 @@
+.top {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  &__svg {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    @mixin hide;
+  }
+
+  &__title {
+    @mixin font-size 124;
+
+    margin: 9.999rem auto 0;
+    margin-left: 6.666rem;
+    font-family: $font-sub;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 0.5rem;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(10vh);
+    transition: transform 1.4s ease-in-out-circ, opacity 1.4s ease-in-out-circ;
+    transition-delay: 1.2s;
+
+    @mixin breakpoint phone {
+      width: 100%;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 0;
+      font-size: 2rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    body.load-completed & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    strong {
+      @mixin font-size 160;
+    }
+  }
+
+  &__desc {
+    @mixin font-size 32;
+
+    margin: 0;
+    margin-left: 6.666rem;
+    opacity: 0;
+    text-align: left;
+    transform: translateY(10vh);
+    transition: transform 1.4s ease-in-out-circ, opacity 1.4s ease-in-out-circ;
+    transition-delay: 1.4s;
+
+    @mixin breakpoint phone {
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    body.load-completed & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__shape {
+    position: fixed;
+    bottom: -16.666rem;
+    right: -6.666rem;
+    margin: 0;
+    font-size: 40rem;
+    line-height: 1;
+    letter-spacing: -1rem;
+    opacity: 0.2;
+    transform: translateX(100%);
+    transition: transform 1.8s ease-in-out-circ;
+    transition-delay: 1s;
+
+    @mixin breakpoint phone {
+      font-size: 23rem;
+      opacity: 0.25;
+      bottom: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 0.85;
+    }
+
+    body.load-completed & {
+      transform: translateX(0);
+
+      @mixin breakpoint phone {
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
